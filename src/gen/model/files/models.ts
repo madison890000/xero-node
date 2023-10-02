@@ -216,6 +216,12 @@ export class OAuth implements Authentication {
         if (requestOptions && requestOptions.headers) {
             requestOptions.headers["Authorization"] = "Bearer " + this.accessToken;
         }
+        /**
+         *  try to avoid headers has key Idempotency-Key,but value is null/undefined
+         */
+        if(requestOptions && requestOptions.headers && requestOptions.headers.hasOwnProperty('Idempotency-Key') && (requestOptions.headers['Idempotency-Key'] === null || requestOptions.headers['Idempotency-Key'] ===undefined)){
+            delete  requestOptions.headers['Idempotency-Key'];
+        }
     }
 }
 
