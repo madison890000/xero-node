@@ -4,7 +4,7 @@
   "description": "Xero NodeJS OAuth 2.0 client for xero-node",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "Xero Platform Team",
+  "author": "madison890000",
   "license": "MIT",
   "repository": {
     "type": "git",
