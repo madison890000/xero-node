@@ -85,10 +85,10 @@ export class FilesApi {
      * @summary Creates a new file association
      * @param xeroTenantId Xero identifier for Tenant
      * @param fileId File id for single object
+     * @param association
      * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-     * @param association 
      */     
-    public async createFileAssociation (xeroTenantId: string, fileId: string, idempotencyKey?: string, association?: Association, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Association;  }> {
+    public async createFileAssociation (xeroTenantId: string, fileId: string, association?: Association, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Association;  }> {
         const localVarPath = this.basePath + '/Files/{FileId}/Associations'
             .replace('{' + 'FileId' + '}', encodeURIComponent(String(fileId)));
         let localVarQueryParameters: any = {};
@@ -153,10 +153,10 @@ export class FilesApi {
      * By passing in the appropriate properties, you can create a new folder
      * @summary Creates a new folder
      * @param xeroTenantId Xero identifier for Tenant
+     * @param folder
      * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-     * @param folder 
      */     
-    public async createFolder (xeroTenantId: string, idempotencyKey?: string, folder?: Folder, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Folder;  }> {
+    public async createFolder (xeroTenantId: string, folder?: Folder, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Folder;  }> {
         const localVarPath = this.basePath + '/Folders';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1001,10 +1001,10 @@ export class FilesApi {
      * @summary Update a file
      * @param xeroTenantId Xero identifier for Tenant
      * @param fileId File id for single object
+     * @param fileObject
      * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-     * @param fileObject 
      */     
-    public async updateFile (xeroTenantId: string, fileId: string, idempotencyKey?: string, fileObject?: FileObject, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: FileObject;  }> {
+    public async updateFile (xeroTenantId: string, fileId: string, fileObject?: FileObject, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: FileObject;  }> {
         const localVarPath = this.basePath + '/Files/{FileId}'
             .replace('{' + 'FileId' + '}', encodeURIComponent(String(fileId)));
         let localVarQueryParameters: any = {};
@@ -1145,11 +1145,11 @@ export class FilesApi {
      * @param xeroTenantId Xero identifier for Tenant
      * @param body 
      * @param name exact name of the file you are uploading
-     * @param filename 
+     * @param filename
+     * @param mimeType
      * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-     * @param mimeType 
      */     
-    public async uploadFile (xeroTenantId: string, body: fs.ReadStream, name: string, filename: string, idempotencyKey?: string, mimeType?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: FileObject;  }> {
+    public async uploadFile (xeroTenantId: string, body: fs.ReadStream, name: string, filename: string, mimeType?: string, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: FileObject;  }> {
         const localVarPath = this.basePath + '/Files';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1242,11 +1242,11 @@ export class FilesApi {
      * @param folderId pass required folder id to save file to specific folder
      * @param body 
      * @param name exact name of the file you are uploading
-     * @param filename 
+     * @param filename
+     * @param mimeType
      * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-     * @param mimeType 
      */     
-    public async uploadFileToFolder (xeroTenantId: string, folderId: string, body: fs.ReadStream, name: string, filename: string, idempotencyKey?: string, mimeType?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: FileObject;  }> {
+    public async uploadFileToFolder (xeroTenantId: string, folderId: string, body: fs.ReadStream, name: string, filename: string, mimeType?: string, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: FileObject;  }> {
         const localVarPath = this.basePath + '/Files/{FolderId}'
             .replace('{' + 'FolderId' + '}', encodeURIComponent(String(folderId)));
         let localVarQueryParameters: any = {};

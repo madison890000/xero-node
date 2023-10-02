@@ -481,11 +481,11 @@ export class AccountingApi {
      * @summary Creates one or more spent or received money transaction
      * @param xeroTenantId Xero identifier for Tenant
      * @param bankTransactions BankTransactions with an array of BankTransaction objects in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createBankTransactions (xeroTenantId: string, bankTransactions: BankTransactions, idempotencyKey?: string, summarizeErrors?: boolean, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BankTransactions;  }> {
+    public async createBankTransactions (xeroTenantId: string, bankTransactions: BankTransactions, summarizeErrors?: boolean, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BankTransactions;  }> {
         const localVarPath = this.basePath + '/BankTransactions';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1338,10 +1338,10 @@ export class AccountingApi {
      * @summary Creates multiple contacts (bulk) in a Xero organisation
      * @param xeroTenantId Xero identifier for Tenant
      * @param contacts Contacts with an array of Contact objects to create in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createContacts (xeroTenantId: string, contacts: Contacts, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Contacts;  }> {
+    public async createContacts (xeroTenantId: string, contacts: Contacts, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Contacts;  }> {
         const localVarPath = this.basePath + '/Contacts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1411,10 +1411,10 @@ export class AccountingApi {
      * @param xeroTenantId Xero identifier for Tenant
      * @param creditNoteID Unique identifier for a Credit Note
      * @param allocations Allocations with array of Allocation object in body of request.
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createCreditNoteAllocation (xeroTenantId: string, creditNoteID: string, allocations: Allocations, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Allocations;  }> {
+    public async createCreditNoteAllocation (xeroTenantId: string, creditNoteID: string, allocations: Allocations, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Allocations;  }> {
         const localVarPath = this.basePath + '/CreditNotes/{CreditNoteID}/Allocations'
             .replace('{' + 'CreditNoteID' + '}', encodeURIComponent(String(creditNoteID)));
         let localVarQueryParameters: any = {};
@@ -1491,10 +1491,10 @@ export class AccountingApi {
      * @param creditNoteID Unique identifier for a Credit Note
      * @param fileName Name of the attachment
      * @param body Byte array of file in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param includeOnline Allows an attachment to be seen by the end customer within their online invoice
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createCreditNoteAttachmentByFileName (xeroTenantId: string, creditNoteID: string, fileName: string, body: fs.ReadStream, idempotencyKey?: string, includeOnline?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Attachments;  }> {
+    public async createCreditNoteAttachmentByFileName (xeroTenantId: string, creditNoteID: string, fileName: string, body: fs.ReadStream, includeOnline?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Attachments;  }> {
         const localVarPath = this.basePath + '/CreditNotes/{CreditNoteID}/Attachments/{FileName}'
             .replace('{' + 'CreditNoteID' + '}', encodeURIComponent(String(creditNoteID)))
             .replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
@@ -1671,11 +1671,11 @@ export class AccountingApi {
      * @summary Creates a new credit note
      * @param xeroTenantId Xero identifier for Tenant
      * @param creditNotes Credit Notes with array of CreditNote object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createCreditNotes (xeroTenantId: string, creditNotes: CreditNotes, idempotencyKey?: string, summarizeErrors?: boolean, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreditNotes;  }> {
+    public async createCreditNotes (xeroTenantId: string, creditNotes: CreditNotes, summarizeErrors?: boolean, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreditNotes;  }> {
         const localVarPath = this.basePath + '/CreditNotes';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -1815,10 +1815,10 @@ export class AccountingApi {
      * @summary Creates new employees used in Xero payrun
      * @param xeroTenantId Xero identifier for Tenant
      * @param employees Employees with array of Employee object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createEmployees (xeroTenantId: string, employees: Employees, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Employees;  }> {
+    public async createEmployees (xeroTenantId: string, employees: Employees, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Employees;  }> {
         const localVarPath = this.basePath + '/Employees';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2030,10 +2030,10 @@ export class AccountingApi {
      * @param invoiceID Unique identifier for an Invoice
      * @param fileName Name of the attachment
      * @param body Byte array of file in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param includeOnline Allows an attachment to be seen by the end customer within their online invoice
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createInvoiceAttachmentByFileName (xeroTenantId: string, invoiceID: string, fileName: string, body: fs.ReadStream, idempotencyKey?: string, includeOnline?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Attachments;  }> {
+    public async createInvoiceAttachmentByFileName (xeroTenantId: string, invoiceID: string, fileName: string, body: fs.ReadStream, includeOnline?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Attachments;  }> {
         const localVarPath = this.basePath + '/Invoices/{InvoiceID}/Attachments/{FileName}'
             .replace('{' + 'InvoiceID' + '}', encodeURIComponent(String(invoiceID)))
             .replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
@@ -2210,11 +2210,11 @@ export class AccountingApi {
      * @summary Creates one or more sales invoices or purchase bills
      * @param xeroTenantId Xero identifier for Tenant
      * @param invoices Invoices with an array of invoice objects in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createInvoices (xeroTenantId: string, invoices: Invoices, idempotencyKey?: string, summarizeErrors?: boolean, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Invoices;  }> {
+    public async createInvoices (xeroTenantId: string, invoices: Invoices, summarizeErrors?: boolean, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Invoices;  }> {
         const localVarPath = this.basePath + '/Invoices';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2361,11 +2361,11 @@ export class AccountingApi {
      * @summary Creates one or more items
      * @param xeroTenantId Xero identifier for Tenant
      * @param items Items with an array of Item objects in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createItems (xeroTenantId: string, items: Items, idempotencyKey?: string, summarizeErrors?: boolean, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Items;  }> {
+    public async createItems (xeroTenantId: string, items: Items, summarizeErrors?: boolean, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Items;  }> {
         const localVarPath = this.basePath + '/Items';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2682,10 +2682,10 @@ export class AccountingApi {
      * @summary Creates one or more manual journals
      * @param xeroTenantId Xero identifier for Tenant
      * @param manualJournals ManualJournals array with ManualJournal object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createManualJournals (xeroTenantId: string, manualJournals: ManualJournals, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ManualJournals;  }> {
+    public async createManualJournals (xeroTenantId: string, manualJournals: ManualJournals, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ManualJournals;  }> {
         const localVarPath = this.basePath + '/ManualJournals';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -2755,10 +2755,10 @@ export class AccountingApi {
      * @param xeroTenantId Xero identifier for Tenant
      * @param overpaymentID Unique identifier for a Overpayment
      * @param allocations Allocations array with Allocation object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createOverpaymentAllocations (xeroTenantId: string, overpaymentID: string, allocations: Allocations, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Allocations;  }> {
+    public async createOverpaymentAllocations (xeroTenantId: string, overpaymentID: string, allocations: Allocations, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Allocations;  }> {
         const localVarPath = this.basePath + '/Overpayments/{OverpaymentID}/Allocations'
             .replace('{' + 'OverpaymentID' + '}', encodeURIComponent(String(overpaymentID)));
         let localVarQueryParameters: any = {};
@@ -3115,10 +3115,10 @@ export class AccountingApi {
      * @summary Creates multiple payments for invoices or credit notes
      * @param xeroTenantId Xero identifier for Tenant
      * @param payments Payments array with Payment object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createPayments (xeroTenantId: string, payments: Payments, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Payments;  }> {
+    public async createPayments (xeroTenantId: string, payments: Payments, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Payments;  }> {
         const localVarPath = this.basePath + '/Payments';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3188,10 +3188,10 @@ export class AccountingApi {
      * @param xeroTenantId Xero identifier for Tenant
      * @param prepaymentID Unique identifier for a PrePayment
      * @param allocations Allocations with an array of Allocation object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createPrepaymentAllocations (xeroTenantId: string, prepaymentID: string, allocations: Allocations, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Allocations;  }> {
+    public async createPrepaymentAllocations (xeroTenantId: string, prepaymentID: string, allocations: Allocations, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Allocations;  }> {
         const localVarPath = this.basePath + '/Prepayments/{PrepaymentID}/Allocations'
             .replace('{' + 'PrepaymentID' + '}', encodeURIComponent(String(prepaymentID)));
         let localVarQueryParameters: any = {};
@@ -3517,10 +3517,10 @@ export class AccountingApi {
      * @summary Creates one or more purchase orders
      * @param xeroTenantId Xero identifier for Tenant
      * @param purchaseOrders PurchaseOrders with an array of PurchaseOrder object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createPurchaseOrders (xeroTenantId: string, purchaseOrders: PurchaseOrders, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PurchaseOrders;  }> {
+    public async createPurchaseOrders (xeroTenantId: string, purchaseOrders: PurchaseOrders, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PurchaseOrders;  }> {
         const localVarPath = this.basePath + '/PurchaseOrders';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3766,10 +3766,10 @@ export class AccountingApi {
      * @summary Create one or more quotes
      * @param xeroTenantId Xero identifier for Tenant
      * @param quotes Quotes with an array of Quote object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createQuotes (xeroTenantId: string, quotes: Quotes, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Quotes;  }> {
+    public async createQuotes (xeroTenantId: string, quotes: Quotes, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Quotes;  }> {
         const localVarPath = this.basePath + '/Quotes';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -3838,10 +3838,10 @@ export class AccountingApi {
      * @summary Creates draft expense claim receipts for any user
      * @param xeroTenantId Xero identifier for Tenant
      * @param receipts Receipts with an array of Receipt object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createReceipt (xeroTenantId: string, receipts: Receipts, idempotencyKey?: string, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Receipts;  }> {
+    public async createReceipt (xeroTenantId: string, receipts: Receipts, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Receipts;  }> {
         const localVarPath = this.basePath + '/Receipts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -4264,10 +4264,10 @@ export class AccountingApi {
      * @summary Creates one or more repeating invoice templates
      * @param xeroTenantId Xero identifier for Tenant
      * @param repeatingInvoices RepeatingInvoices with an array of repeating invoice objects in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createRepeatingInvoices (xeroTenantId: string, repeatingInvoices: RepeatingInvoices, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RepeatingInvoices;  }> {
+    public async createRepeatingInvoices (xeroTenantId: string, repeatingInvoices: RepeatingInvoices, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RepeatingInvoices;  }> {
         const localVarPath = this.basePath + '/RepeatingInvoices';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -14810,11 +14810,11 @@ export class AccountingApi {
      * @summary Updates a single spent or received money transaction
      * @param xeroTenantId Xero identifier for Tenant
      * @param bankTransactionID Xero generated unique identifier for a bank transaction
-     * @param bankTransactions 
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+     * @param bankTransactions
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateBankTransaction (xeroTenantId: string, bankTransactionID: string, bankTransactions: BankTransactions, idempotencyKey?: string, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BankTransactions;  }> {
+    public async updateBankTransaction (xeroTenantId: string, bankTransactionID: string, bankTransactions: BankTransactions, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BankTransactions;  }> {
         const localVarPath = this.basePath + '/BankTransactions/{BankTransactionID}'
             .replace('{' + 'BankTransactionID' + '}', encodeURIComponent(String(bankTransactionID)));
         let localVarQueryParameters: any = {};
@@ -15345,10 +15345,10 @@ export class AccountingApi {
      * @param xeroTenantId Xero identifier for Tenant
      * @param creditNoteID Unique identifier for a Credit Note
      * @param creditNotes an array of Credit Notes containing credit note details to update
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateCreditNote (xeroTenantId: string, creditNoteID: string, creditNotes: CreditNotes, idempotencyKey?: string, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreditNotes;  }> {
+    public async updateCreditNote (xeroTenantId: string, creditNoteID: string, creditNotes: CreditNotes, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreditNotes;  }> {
         const localVarPath = this.basePath + '/CreditNotes/{CreditNoteID}'
             .replace('{' + 'CreditNoteID' + '}', encodeURIComponent(String(creditNoteID)));
         let localVarQueryParameters: any = {};
@@ -15600,11 +15600,11 @@ export class AccountingApi {
      * @summary Updates a specific sales invoices or purchase bills
      * @param xeroTenantId Xero identifier for Tenant
      * @param invoiceID Unique identifier for an Invoice
-     * @param invoices 
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+     * @param invoices
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateInvoice (xeroTenantId: string, invoiceID: string, invoices: Invoices, idempotencyKey?: string, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Invoices;  }> {
+    public async updateInvoice (xeroTenantId: string, invoiceID: string, invoices: Invoices, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Invoices;  }> {
         const localVarPath = this.basePath + '/Invoices/{InvoiceID}'
             .replace('{' + 'InvoiceID' + '}', encodeURIComponent(String(invoiceID)));
         let localVarQueryParameters: any = {};
@@ -15782,11 +15782,11 @@ export class AccountingApi {
      * @summary Updates a specific item
      * @param xeroTenantId Xero identifier for Tenant
      * @param itemID Unique identifier for an Item
-     * @param items 
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+     * @param items
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateItem (xeroTenantId: string, itemID: string, items: Items, idempotencyKey?: string, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Items;  }> {
+    public async updateItem (xeroTenantId: string, itemID: string, items: Items, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Items;  }> {
         const localVarPath = this.basePath + '/Items/{ItemID}'
             .replace('{' + 'ItemID' + '}', encodeURIComponent(String(itemID)));
         let localVarQueryParameters: any = {};
@@ -16111,12 +16111,12 @@ export class AccountingApi {
      * 
      * @summary Updates or creates one or more spent or received money transaction
      * @param xeroTenantId Xero identifier for Tenant
-     * @param bankTransactions 
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+     * @param bankTransactions
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateOrCreateBankTransactions (xeroTenantId: string, bankTransactions: BankTransactions, idempotencyKey?: string, summarizeErrors?: boolean, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BankTransactions;  }> {
+    public async updateOrCreateBankTransactions (xeroTenantId: string, bankTransactions: BankTransactions, summarizeErrors?: boolean, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: BankTransactions;  }> {
         const localVarPath = this.basePath + '/BankTransactions';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -16188,11 +16188,11 @@ export class AccountingApi {
      * 
      * @summary Updates or creates one or more contacts in a Xero organisation
      * @param xeroTenantId Xero identifier for Tenant
-     * @param contacts 
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+     * @param contacts
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateOrCreateContacts (xeroTenantId: string, contacts: Contacts, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Contacts;  }> {
+    public async updateOrCreateContacts (xeroTenantId: string, contacts: Contacts, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Contacts;  }> {
         const localVarPath = this.basePath + '/Contacts';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -16261,11 +16261,11 @@ export class AccountingApi {
      * @summary Updates or creates one or more credit notes
      * @param xeroTenantId Xero identifier for Tenant
      * @param creditNotes an array of Credit Notes with a single CreditNote object.
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateOrCreateCreditNotes (xeroTenantId: string, creditNotes: CreditNotes, idempotencyKey?: string, summarizeErrors?: boolean, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreditNotes;  }> {
+    public async updateOrCreateCreditNotes (xeroTenantId: string, creditNotes: CreditNotes, summarizeErrors?: boolean, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: CreditNotes;  }> {
         const localVarPath = this.basePath + '/CreditNotes';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -16338,10 +16338,10 @@ export class AccountingApi {
      * @summary Creates a single new employees used in Xero payrun
      * @param xeroTenantId Xero identifier for Tenant
      * @param employees Employees with array of Employee object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateOrCreateEmployees (xeroTenantId: string, employees: Employees, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Employees;  }> {
+    public async updateOrCreateEmployees (xeroTenantId: string, employees: Employees, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Employees;  }> {
         const localVarPath = this.basePath + '/Employees';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -16409,12 +16409,12 @@ export class AccountingApi {
      * 
      * @summary Updates or creates one or more sales invoices or purchase bills
      * @param xeroTenantId Xero identifier for Tenant
-     * @param invoices 
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+     * @param invoices
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateOrCreateInvoices (xeroTenantId: string, invoices: Invoices, idempotencyKey?: string, summarizeErrors?: boolean, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Invoices;  }> {
+    public async updateOrCreateInvoices (xeroTenantId: string, invoices: Invoices, summarizeErrors?: boolean, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Invoices;  }> {
         const localVarPath = this.basePath + '/Invoices';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -16486,12 +16486,12 @@ export class AccountingApi {
      * 
      * @summary Updates or creates one or more items
      * @param xeroTenantId Xero identifier for Tenant
-     * @param items 
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+     * @param items
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateOrCreateItems (xeroTenantId: string, items: Items, idempotencyKey?: string, summarizeErrors?: boolean, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Items;  }> {
+    public async updateOrCreateItems (xeroTenantId: string, items: Items, summarizeErrors?: boolean, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Items;  }> {
         const localVarPath = this.basePath + '/Items';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -16564,10 +16564,10 @@ export class AccountingApi {
      * @summary Updates or creates a single manual journal
      * @param xeroTenantId Xero identifier for Tenant
      * @param manualJournals ManualJournals array with ManualJournal object in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateOrCreateManualJournals (xeroTenantId: string, manualJournals: ManualJournals, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ManualJournals;  }> {
+    public async updateOrCreateManualJournals (xeroTenantId: string, manualJournals: ManualJournals, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ManualJournals;  }> {
         const localVarPath = this.basePath + '/ManualJournals';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -16635,11 +16635,11 @@ export class AccountingApi {
      * 
      * @summary Updates or creates one or more purchase orders
      * @param xeroTenantId Xero identifier for Tenant
-     * @param purchaseOrders 
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+     * @param purchaseOrders
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateOrCreatePurchaseOrders (xeroTenantId: string, purchaseOrders: PurchaseOrders, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PurchaseOrders;  }> {
+    public async updateOrCreatePurchaseOrders (xeroTenantId: string, purchaseOrders: PurchaseOrders, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PurchaseOrders;  }> {
         const localVarPath = this.basePath + '/PurchaseOrders';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -16707,11 +16707,11 @@ export class AccountingApi {
      * 
      * @summary Updates or creates one or more quotes
      * @param xeroTenantId Xero identifier for Tenant
-     * @param quotes 
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+     * @param quotes
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateOrCreateQuotes (xeroTenantId: string, quotes: Quotes, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Quotes;  }> {
+    public async updateOrCreateQuotes (xeroTenantId: string, quotes: Quotes, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Quotes;  }> {
         const localVarPath = this.basePath + '/Quotes';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -16780,10 +16780,10 @@ export class AccountingApi {
      * @summary Creates or deletes one or more repeating invoice templates
      * @param xeroTenantId Xero identifier for Tenant
      * @param repeatingInvoices RepeatingInvoices with an array of repeating invoice objects in body of request
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param summarizeErrors If false return 200 OK and mix of successfully created objects and any with validation errors
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateOrCreateRepeatingInvoices (xeroTenantId: string, repeatingInvoices: RepeatingInvoices, idempotencyKey?: string, summarizeErrors?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RepeatingInvoices;  }> {
+    public async updateOrCreateRepeatingInvoices (xeroTenantId: string, repeatingInvoices: RepeatingInvoices, summarizeErrors?: boolean, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: RepeatingInvoices;  }> {
         const localVarPath = this.basePath + '/RepeatingInvoices';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
@@ -17206,11 +17206,11 @@ export class AccountingApi {
      * @summary Updates a specific draft expense claim receipts
      * @param xeroTenantId Xero identifier for Tenant
      * @param receiptID Unique identifier for a Receipt
-     * @param receipts 
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
+     * @param receipts
      * @param unitdp e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async updateReceipt (xeroTenantId: string, receiptID: string, receipts: Receipts, idempotencyKey?: string, unitdp?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Receipts;  }> {
+    public async updateReceipt (xeroTenantId: string, receiptID: string, receipts: Receipts, unitdp?: number, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Receipts;  }> {
         const localVarPath = this.basePath + '/Receipts/{ReceiptID}'
             .replace('{' + 'ReceiptID' + '}', encodeURIComponent(String(receiptID)));
         let localVarQueryParameters: any = {};
