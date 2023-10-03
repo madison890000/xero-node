@@ -151,10 +151,10 @@ export class BankFeedsApi {
      * 
      * @summary Creates one or more new statements
      * @param xeroTenantId Xero identifier for Tenant
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param statements Statements array of objects in the body
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createStatements (xeroTenantId: string, idempotencyKey?: string, statements?: Statements, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Statements;  }> {
+    public async createStatements (xeroTenantId: string, statements?: Statements, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Statements;  }> {
         const localVarPath = this.basePath + '/Statements';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);

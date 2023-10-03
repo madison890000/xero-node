@@ -1,3 +1,14 @@
+# This is a copy from xero-node.
+
+Just fix this issue:
+https://github.com/XeroAPI/xero-node/issues/649.
+
+
+I have only made two changes:
+
+- first is to move the new parameter "idempotencyKey" to the second-to-last position, just before the headers parameter.
+- second is deleting the  Idempotency-Key in header if it is null/undefined.
+
 # xero-node
 [![npm version](https://badge.fury.io/js/xero-node.svg)](https://badge.fury.io/js/xero-node)
 [![Github forks](https://img.shields.io/github/forks/XeroAPI/xero-node.svg)](https://github.com/XeroAPI/xero-node/network)

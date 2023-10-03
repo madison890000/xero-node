@@ -1886,10 +1886,10 @@ export class PayrollAuApi {
      * @summary Updates an employee\'s detail
      * @param xeroTenantId Xero identifier for Tenant
      * @param employeeID Employee id for single object
+     * @param employee
      * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-     * @param employee 
-     */     
-    public async updateEmployee (xeroTenantId: string, employeeID: string, idempotencyKey?: string, employee?: Array<Employee>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Employees;  }> {
+     */
+    public async updateEmployee (xeroTenantId: string, employeeID: string, employee?: Array<Employee>,idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Employees;  }> {
         const localVarPath = this.basePath + '/Employees/{EmployeeID}'
             .replace('{' + 'EmployeeID' + '}', encodeURIComponent(String(employeeID)));
         let localVarQueryParameters: any = {};
@@ -2029,10 +2029,10 @@ export class PayrollAuApi {
      * @summary Updates a pay run
      * @param xeroTenantId Xero identifier for Tenant
      * @param payRunID PayRun id for single object
+     * @param payRun
      * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-     * @param payRun 
      */     
-    public async updatePayRun (xeroTenantId: string, payRunID: string, idempotencyKey?: string, payRun?: Array<PayRun>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PayRuns;  }> {
+    public async updatePayRun (xeroTenantId: string, payRunID: string, payRun?: Array<PayRun>, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: PayRuns;  }> {
         const localVarPath = this.basePath + '/PayRuns/{PayRunID}'
             .replace('{' + 'PayRunID' + '}', encodeURIComponent(String(payRunID)));
         let localVarQueryParameters: any = {};
@@ -2098,10 +2098,10 @@ export class PayrollAuApi {
      * @summary Updates a payslip
      * @param xeroTenantId Xero identifier for Tenant
      * @param payslipID Payslip id for single object
+     * @param payslipLines
      * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-     * @param payslipLines 
      */     
-    public async updatePayslip (xeroTenantId: string, payslipID: string, idempotencyKey?: string, payslipLines?: Array<PayslipLines>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Payslips;  }> {
+    public async updatePayslip (xeroTenantId: string, payslipID: string, payslipLines?: Array<PayslipLines>,idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Payslips;  }> {
         const localVarPath = this.basePath + '/Payslip/{PayslipID}'
             .replace('{' + 'PayslipID' + '}', encodeURIComponent(String(payslipID)));
         let localVarQueryParameters: any = {};
@@ -2167,10 +2167,10 @@ export class PayrollAuApi {
      * @summary Updates a superfund
      * @param xeroTenantId Xero identifier for Tenant
      * @param superFundID Superfund id for single object
+     * @param superFund
      * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-     * @param superFund 
      */     
-    public async updateSuperfund (xeroTenantId: string, superFundID: string, idempotencyKey?: string, superFund?: Array<SuperFund>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SuperFunds;  }> {
+    public async updateSuperfund (xeroTenantId: string, superFundID: string, superFund?: Array<SuperFund>, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SuperFunds;  }> {
         const localVarPath = this.basePath + '/Superfunds/{SuperFundID}'
             .replace('{' + 'SuperFundID' + '}', encodeURIComponent(String(superFundID)));
         let localVarQueryParameters: any = {};
@@ -2236,10 +2236,10 @@ export class PayrollAuApi {
      * @summary Updates a timesheet
      * @param xeroTenantId Xero identifier for Tenant
      * @param timesheetID Timesheet id for single object
+     * @param timesheet
      * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
-     * @param timesheet 
      */     
-    public async updateTimesheet (xeroTenantId: string, timesheetID: string, idempotencyKey?: string, timesheet?: Array<Timesheet>, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Timesheets;  }> {
+    public async updateTimesheet (xeroTenantId: string, timesheetID: string, timesheet?: Array<Timesheet>, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Timesheets;  }> {
         const localVarPath = this.basePath + '/Timesheets/{TimesheetID}'
             .replace('{' + 'TimesheetID' + '}', encodeURIComponent(String(timesheetID)));
         let localVarQueryParameters: any = {};

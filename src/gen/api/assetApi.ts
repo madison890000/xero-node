@@ -152,10 +152,10 @@ export class AssetApi {
      * Adds an fixed asset type to the system
      * @summary adds a fixed asset type
      * @param xeroTenantId Xero identifier for Tenant
-     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      * @param assetType Asset type to add
+     * @param idempotencyKey This allows you to safely retry requests without the risk of duplicate processing. 128 character max.
      */     
-    public async createAssetType (xeroTenantId: string, idempotencyKey?: string, assetType?: AssetType, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AssetType;  }> {
+    public async createAssetType (xeroTenantId: string, assetType?: AssetType, idempotencyKey?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: AssetType;  }> {
         const localVarPath = this.basePath + '/AssetTypes';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this.defaultHeaders);
