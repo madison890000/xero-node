@@ -1,6 +1,29 @@
 # This is a copy from xero-node.
 
-Just fix this issues:
+### NOTE: This is not an official git repo or npm lib!
+
+This is a fix version of xero-node 4.36.0, trying to reduce
+the effects of break change when upgrading from
+xero-node 4.35.0 to xero-node 4.36.0.
+
+I am not sure why the Xero didn't
+add this new idempotencyKey to the second-to-last position in most functions when firstly supported
+idempotencyKey in xero-node 4.36.0, maybe
+it is a mistake, but it happened.
+
+### PAY ATTENTION
+I am not recommending you using my lib if you are already running
+xero-node 4.36.0 very well in your project.
+
+I would recommend you using my lib as a temp solution if your are
+trying to upgrade xero-node below 4.36.0( 4.35.0,4.34.0,... )  to xero-node 4.36.0.
+It won't case break changes when hit idempotencyKey param in most API functions.
+
+However, I change the order of parameter of idempotencyKey, even it is an optional
+parameter, the order is still impact a lot.
+
+### Changes from official xero-node 4.36.0
+I Just fix those issues:
 - https://github.com/XeroAPI/xero-node/issues/649.
 - https://github.com/XeroAPI/xero-node/issues/652.
 
@@ -10,9 +33,11 @@ two changes for 649:
 - first is to move the new parameter "idempotencyKey" to the second-to-last position, just before the headers parameter.
 - second is deleting the  Idempotency-Key in header if it is null/undefined.
 
+
 one change for 652:
 
 - manually export most of the types in gen model
+
 
 # xero-node
 [![npm version](https://badge.fury.io/js/xero-node.svg)](https://badge.fury.io/js/xero-node)
