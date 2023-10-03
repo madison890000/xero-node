@@ -1,13 +1,18 @@
 # This is a copy from xero-node.
 
-Just fix this issue:
-https://github.com/XeroAPI/xero-node/issues/649.
+Just fix this issues:
+- https://github.com/XeroAPI/xero-node/issues/649.
+- https://github.com/XeroAPI/xero-node/issues/652.
 
 
-I have only made two changes:
+two changes for 649:
 
 - first is to move the new parameter "idempotencyKey" to the second-to-last position, just before the headers parameter.
 - second is deleting the  Idempotency-Key in header if it is null/undefined.
+
+one change for 652:
+
+- manually export most of the types in gen model
 
 # xero-node
 [![npm version](https://badge.fury.io/js/xero-node.svg)](https://badge.fury.io/js/xero-node)
