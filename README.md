@@ -187,7 +187,7 @@ console.log(subscriptionRequest.body)
   id: '03bc74f2-1237-4477-b782-2dfb1a6d8b21',
   organisationId: '79e8b2e5-c63d-4dce-888f-e0f3e9eac647',
   plans: [
-    Plan {
+    {
       id: '6abc26f3-9390-4194-8b25-ce8b9942fda9',
       name: 'Small',
       status: 'ACTIVE',
